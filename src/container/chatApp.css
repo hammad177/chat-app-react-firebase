@@ -1,0 +1,157 @@
+/** @format */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.chat-container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#chat {
+  height: 90vh;
+  min-height: 500px;
+  width: 85vw;
+  border-radius: 2px;
+  border-radius: 4px;
+  display: grid;
+  grid-template-columns: minmax(180px, 1fr) minmax(500px, 2.5fr);
+  grid-template-rows: minmax(50px, 10%) minmax(450px, 90%);
+  box-shadow: 1px 1px 5px 5px rgba(0, 164, 138, 0.4);
+  transition: all 0.3s ease;
+}
+
+#chat-header {
+  grid-column: 1/3;
+  grid-row: 1/2;
+  border-bottom: 1px solid rgba(155, 155, 155, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.chat-head {
+  font-size: larger;
+  color: rgb(0, 164, 138);
+}
+
+.canvas-users {
+  display: none;
+}
+
+.logout-btn {
+  margin-right: 2%;
+}
+
+.logout-btn button {
+  padding: 6px 9px;
+  border: none;
+  background: none;
+  color: rgb(99, 99, 99);
+  user-select: none;
+  border: 1px solid transparent;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.logout-btn button:focus {
+  outline: none;
+}
+
+.logout-btn button:hover {
+  border: 1px solid rgb(99, 99, 99);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#chat-users {
+  grid-column: 1/2;
+  grid-row: 2/3;
+  border-right: 1px solid rgba(70, 70, 70, 0.4);
+  max-height: 100%;
+  overflow: auto;
+}
+
+#chat-massages {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  display: flex;
+  flex-direction: column-reverse;
+  width: 100%;
+  height: 100%;
+  color: black;
+  background-color: rgb(237, 240, 246);
+  position: relative;
+  transition: all 0.5s ease;
+}
+
+@media only screen and (max-width: 800px) {
+  #chat {
+    width: 95vw;
+    height: 95vh;
+    grid-template-columns: 1fr minmax(300px, 6fr);
+  }
+  .user-name {
+    display: none;
+  }
+  .users {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .users img {
+    width: 55px;
+    height: 55px;
+  }
+  .span-msg {
+    max-width: 75%;
+  }
+  .quick-chat div {
+    margin-top: 10%;
+  }
+  .no-users {
+    font-size: medium;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  #chat {
+    grid-template-columns: 0fr minmax(280px, 1fr);
+    width: 100vw;
+    height: 100vh;
+    min-width: 280px;
+    min-width: 280px;
+  }
+  .user-name {
+    display: contents;
+  }
+  .users {
+    justify-content: flex-start;
+  }
+  .search-user {
+    display: none;
+  }
+  .canvas-users {
+    display: contents;
+  }
+  .logout-btn {
+    margin-right: 0;
+  }
+  .logout-btn button {
+    padding: 5px 6px;
+    font-size: 14px;
+  }
+  .quick-chat div {
+    margin-top: 100px;
+  }
+  .no-users {
+    font-size: x-large;
+  }
+}

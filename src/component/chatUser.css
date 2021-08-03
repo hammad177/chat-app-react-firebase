@@ -1,0 +1,45 @@
+/** @format */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(187, 187, 187);
+}
+
+.users {
+  list-style: none;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  color: rgb(60, 60, 60);
+  overflow: hidden;
+  user-select: none;
+}
+
+.users:hover {
+  background-color: rgba(0, 164, 138, 0.8);
+  cursor: pointer;
+  color: white;
+}
+
+.users-img {
+  height: 45px;
+  width: 45px;
+  margin: 0px 20px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.user-name {
+  font-family: sans-serif;
+  font-size: large;
+  font-weight: 600;
+}
+
+.no-users {
+  text-align: center;
+  margin-top: 20px;
+  color: #006352;
+}
